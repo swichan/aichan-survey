@@ -39,25 +39,24 @@ export default function SurveyApp() {
 
   if (isSubmitted) {
     return (
-      <>
-        <ProgressBar progress={100} />
-        <div className="max-w-[760px] mx-auto px-4 py-[60px] font-sans bg-cream min-h-screen">
+      <div className="min-h-screen bg-warm-white relative overflow-hidden flex flex-col items-center">
+        <div className="w-full absolute top-0 left-0 z-50">
+          <ProgressBar progress={100} />
+        </div>
+        <div className="max-w-230 w-full mx-auto px-4 py-15 mt-10 mb-10 font-sans bg-cream min-h-[80vh] shadow-xl shadow-charcoal/5 border border-black/3 rounded-2xl relative z-10">
           <ThankYouScreen visible />
         </div>
-      </>
+      </div>
     )
   }
 
   return (
-    <>
-      <ProgressBar progress={progress} />
+    <div className="min-h-screen bg-warm-white relative overflow-hidden flex flex-col">
+      <div className="w-full fixed top-0 left-0 z-50">
+        <ProgressBar progress={progress} />
+      </div>
 
-      <div
-        className="fixed top-[-200px] right-[-200px] w-[600px] h-[600px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle,#e8c4b818 0%,transparent 70%)' }}
-      />
-
-      <div className="max-w-[760px] mx-auto px-4 pt-[60px] pb-[80px] relative z-10 font-sans bg-cream min-h-screen">
+      <div className="max-w-230 w-full mx-auto px-4 pt-15 pb-20 mt-10 mb-10 relative z-10 font-sans bg-cream min-h-[90vh] shadow-xl shadow-charcoal/5 border border-black/3 rounded-2xl">
         <SurveyHeader />
 
         {/* Q1: Age */}
@@ -410,6 +409,6 @@ export default function SurveyApp() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }

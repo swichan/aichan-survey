@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { db } from '@/db'
 import { submissions } from '@/db/schema'
 import { desc } from 'drizzle-orm'
@@ -40,9 +41,13 @@ export default async function AdminPage() {
                 {rows.map((row, i) => (
                   <tr
                     key={row.id}
-                    className={`border-b border-border-col hover:bg-[#fdf9f6] transition-colors ${i === rows.length - 1 ? 'border-b-0' : ''}`}
+                    className={`border-b border-border-col hover:bg-[#fdf9f6] transition-colors cursor-pointer ${i === rows.length - 1 ? 'border-b-0' : ''}`}
                   >
-                    <td className="px-4 py-3 text-light text-[12px]">{row.id}</td>
+                    <td className="px-4 py-3 text-light text-[12px]">
+                      <Link href={`/admin/responses/${row.id}`} className="text-blush hover:underline font-medium">
+                        #{row.id}
+                      </Link>
+                    </td>
                     <td className="px-4 py-3 text-mid whitespace-nowrap text-[12px]">
                       {row.createdAt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </td>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #faf7f2;
+  --color-cream: #fdeee9;
   --color-warm-white: #fff9f5;
   --color-blush: #e8c4b8;
   --color-dusty-rose: #c9897a;
@@ -28,6 +28,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 html {
