@@ -13,6 +13,9 @@ export default function ThankYouScreen({ visible }: Props) {
         <br /><br />
         Your answers will directly shape how we design.
       </p>
+      <p className="mt-8 text-[15px] text-dusty-rose font-serif italic">
+        ~ 愛音 ❤️
+      </p>
     </div>
   )
 }
